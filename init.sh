@@ -67,6 +67,7 @@ EOF
 
   # 覆盖默认用户名
   get_name() {
+    echo "getname"
     read -rp "请输入要创建的用户名 (默认: fangzi): " input_username
     USERNAME=${input_username:-fangzi}
     read -rp "请输入主机名 (默认: home): " input_hostname
