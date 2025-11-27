@@ -1,9 +1,9 @@
 #!/bin/bash
 set -eE
 # SSH密钥
-PUBLIC_KEY="ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJ2A0zvOGzFHVmeOqijww+vz7VtSZNPuIA6tMIeTxXk0"
-# 用户名(默认为linran)
-USERNAME="linran"
+PUBLIC_KEY="ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMKLb4w1mWdw323vL08zESrcEhLgtP6ILboVKtmTiKT4 my-ed25519-kdy"
+# 用户名(默认为fangzi)
+USERNAME="fangzi"
 # 主机名
 HOSTNAME="home"
 # SSH端口
@@ -67,8 +67,8 @@ EOF
 
   # 覆盖默认用户名
   get_name() {
-    read -rp "请输入要创建的用户名 (默认: linran): " input_username
-    USERNAME=${input_username:-linran}
+    read -rp "请输入要创建的用户名 (默认: fangzi): " input_username
+    USERNAME=${input_username:-fangzi}
     read -rp "请输入主机名 (默认: home): " input_hostname
     HOSTNAME=${input_hostname:-home}
     # 执行
@@ -138,9 +138,9 @@ EOF
 }
 user(){
   #if is_in_china; then
-  #  curl -fsSLO https://gh.llkk.cc/https://raw.githubusercontent.com/MingriLingran/debian-init/main/user-init.sh
+  #  curl -fsSLO https://gh.llkk.cc/https://raw.githubusercontent.com/fangzi2006/debian-init/main/user-init.sh
   #else
-  #  curl -fsSLO https://raw.githubusercontent.com/MingriLingran/debian-init/main/user-init.sh
+  #  curl -fsSLO https://raw.githubusercontent.com/fangzi2006/debian-init/main/user-init.sh
   #fi
   mv "$(pwd)"/user-init.sh /home/"$USERNAME"/user-init.sh
   chown "$USERNAME":"$USERNAME" /home/"$USERNAME"/user-init.sh
