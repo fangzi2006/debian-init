@@ -8,13 +8,13 @@ PS: 不保证通用性。
 一定一定使用root账户执行以下命令
 
 ``` bash
-curl -fsSL https://github.com/fangzi2006/debain-init/raw/refs/heads/main/init.sh | bash
+curl -fsSL https://github.com/fangzi2006/debian-init/raw/refs/heads/main/init.sh | bash
 ```
 
 中国使用gh代理
 
 ```bash
-curl -fsSL https://gh.llkk.cc/https://github.com/fangzi2006/debain-init/raw/refs/heads/main/init.sh | bash
+curl -fsSL https://gh.llkk.cc/https://github.com/fangzi2006/debian-init/raw/refs/heads/main/init.sh | bash
 ```
 
 ## 预览效果使用docke
