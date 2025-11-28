@@ -138,11 +138,11 @@ EOF
   init
 }
 user(){
-  #if is_in_china; then
-  #  curl -fsSLO https://gh.llkk.cc/https://raw.githubusercontent.com/fangzi2006/debian-init/main/user-init.sh
-  #else
-  #  curl -fsSLO https://raw.githubusercontent.com/fangzi2006/debian-init/main/user-init.sh
-  #fi
+  if is_in_china; then
+    curl -fsSLO https://gh.llkk.cc/https://raw.githubusercontent.com/fangzi2006/debian-init/main/user-init.sh
+  else
+    curl -fsSLO https://raw.githubusercontent.com/fangzi2006/debian-init/main/user-init.sh
+  fi
   mv "$(pwd)"/user-init.sh /home/"$USERNAME"/user-init.sh
   chown "$USERNAME":"$USERNAME" /home/"$USERNAME"/user-init.sh
   chmod +x /home/"$USERNAME"/user-init.sh
