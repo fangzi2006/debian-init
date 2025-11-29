@@ -178,19 +178,19 @@ is_in_china() {
 }
 
 is_docker() {
-    # 检测 cgroup 中的 Docker 标识
-    if grep -q "docker" /proc/1/cgroup 2>/dev/null; then
-        return 1
-    fi
-    # 检查 .dockerenv 文件
     if [ -f "/.dockerenv" ]; then
-        return 1
+        return 0
     fi
-    # 检测 cgroup 路径是否包含容器特征
-    if grep -q "kubepods" /proc/self/cgroup 2>/dev/null; then
-        return 1
+
+    if grep -q "docker" /proc/1/cgroup 2>/dev/null; then
+        return 0
     fi
-    return 0
+
+    if grep -q "kubepods" /proc/1/cgroup 2>/dev/null; then
+        return 0
+    fi
+    
+    return 1
 }
 
 error_and_exit() {
