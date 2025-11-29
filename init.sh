@@ -119,6 +119,7 @@ EOF
       sed -i "s/PasswordAuthentication no/PasswordAuthentication yes/" /etc/ssh/sshd_config.d/*init.conf
     else
       sed -i "s/PasswordAuthentication yes/PasswordAuthentication no/" /etc/ssh/sshd_config
+      sed -i "s/PasswordAuthentication yes/PasswordAuthentication no/" /etc/ssh/sshd_config.d/*init.conf
     fi
     # 创建authorized_keys添加公钥
     mkdir -p /home/"$USERNAME"/.ssh
